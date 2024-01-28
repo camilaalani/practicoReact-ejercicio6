@@ -31,6 +31,36 @@ const SelectorDeColores = () => {
     const valorInput = e.target.value.toLowerCase();
     setNombreColor(valorInput);
   };
+
+  const manejarGuardarColor = () => {
+    if (!/^[a-zA-Z]+$/.test(nombreColor)) {
+      setMensajeError('Por favor, ingresa solo letras para el nombre del color.');
+      return;
+    }
+
+    if (nombreColor.length < 2 || nombreColor.length > 15) {
+      setMensajeError('Por favor, ingresa un color con más de una letra y menos de 15 letras.');
+      return;
+    }
+
+    const codigoColor = nombresColores[nombreColor];
+
+    if (!codigoColor) {
+      setMensajeError('El color ingresado no está disponible.');
+      return;
+    }
+
+    const nuevoColor = {
+      nombre: nombreColor,
+      codigo: codigoColor,
+    };
+
+    const nuevosColoresGuardados = [...coloresGuardados, nuevoColor];
+    localStorage.setItem('coloresGuardados', JSON.stringify(nuevosColoresGuardados));
+    setColoresGuardados(nuevosColoresGuardados);
+
+    setNombreColor('');
+  };
     return (
         <Container className="mt-5">
             <Card>
