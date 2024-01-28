@@ -17,9 +17,13 @@ const nombresColores = {
     gris: "#9E9E9E",
   };
 
-  
-const SelectorDeColores = () => {
 
+const SelectorDeColores = () => {
+    const [nombreColor, setNombreColor] = useState('');
+  const [coloresGuardados, setColoresGuardados] = useState(
+    JSON.parse(localStorage.getItem('coloresGuardados')) || []
+  );
+  const [mensajeError, setMensajeError] = useState(''); 
     return (
         <Container className="mt-5">
             <Card>
