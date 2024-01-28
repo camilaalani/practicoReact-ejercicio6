@@ -24,6 +24,13 @@ const SelectorDeColores = () => {
     JSON.parse(localStorage.getItem('coloresGuardados')) || []
   );
   const [mensajeError, setMensajeError] = useState(''); 
+
+  const manejarCambioDeColor = (e) => {
+    setMensajeError('');
+
+    const valorInput = e.target.value.toLowerCase();
+    setNombreColor(valorInput);
+  };
     return (
         <Container className="mt-5">
             <Card>
