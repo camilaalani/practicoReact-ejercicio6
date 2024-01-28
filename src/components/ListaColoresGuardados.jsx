@@ -1,9 +1,9 @@
 const ListaColoresGuardados = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    <>
+
+      </>
+  );
 };
 
 export default ListaColoresGuardados;
