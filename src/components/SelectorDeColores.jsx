@@ -61,6 +61,15 @@ const SelectorDeColores = () => {
 
     setNombreColor('');
   };
+
+  const manejarBorrarColor = (nombre) => {
+    const nuevosColoresGuardados = coloresGuardados.filter(
+      (color) => color.nombre !== nombre
+    );
+
+    localStorage.setItem('coloresGuardados', JSON.stringify(nuevosColoresGuardados));
+    setColoresGuardados(nuevosColoresGuardados);
+  };
     return (
         <Container className="mt-5">
             <Card>
