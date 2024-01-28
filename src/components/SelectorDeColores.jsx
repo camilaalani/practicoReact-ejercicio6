@@ -77,7 +77,7 @@ const SelectorDeColores = () => {
       manejarGuardarColor();
     }
   };
-  
+
     return (
         <Container className="mt-5">
             <Card>
@@ -107,7 +107,8 @@ const SelectorDeColores = () => {
         </Card.Body>
       </Card>
         <section className="d-flex flex-wrap mt-3">
-            <ListaColoresGuardados></ListaColoresGuardados>
+            <ListaColoresGuardados coloresGuardados={coloresGuardados}
+          manejarBorrarColor={manejarBorrarColor}></ListaColoresGuardados>
         </section>
         </Container>
     );
