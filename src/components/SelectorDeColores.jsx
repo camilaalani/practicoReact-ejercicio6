@@ -2,7 +2,22 @@ import React, { useState } from 'react';
 import { Container, Form, Card, Button, Alert } from 'react-bootstrap';
 import ListaColoresGuardados from "./ListaColoresGuardados";
 
+const nombresColores = {
+    azul: '#0000FF',
+    rojo: '#FF0000',
+    verde: '#008000',
+    rosa: "#FF689D",
+    amarillo: "#FFFB00",
+    naranja: "#FF8000",
+    morado: "#7000FF",
+    marron: "#553D13",
+    blanco: "#FFFFFF",
+    negro: "#000000",
+    celeste: "#00A6FF",
+    gris: "#9E9E9E",
+  };
 
+  
 const SelectorDeColores = () => {
 
     return (
@@ -34,7 +49,7 @@ const SelectorDeColores = () => {
         </Card.Body>
       </Card>
         <section className="d-flex flex-wrap mt-3">
-            <ListaColoresGuardados ></ListaColoresGuardados>
+            <ListaColoresGuardados></ListaColoresGuardados>
         </section>
         </Container>
     );
