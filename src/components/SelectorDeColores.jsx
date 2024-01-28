@@ -70,6 +70,14 @@ const SelectorDeColores = () => {
     localStorage.setItem('coloresGuardados', JSON.stringify(nuevosColoresGuardados));
     setColoresGuardados(nuevosColoresGuardados);
   };
+
+  const manejarKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      manejarGuardarColor();
+    }
+  };
+  
     return (
         <Container className="mt-5">
             <Card>
